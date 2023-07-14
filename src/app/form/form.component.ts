@@ -32,8 +32,8 @@ export class FormComponent {
     if (this.studentForm.valid) {
       let resp = this.service.doregistration(this.studentForm.value);
       resp.subscribe((data) => (this.message = data));
+      
     } else {
-      // mark all form controls as touched to show validation errors
       Object.values(this.studentForm.controls).forEach(control => {
         control.markAsTouched();
       });

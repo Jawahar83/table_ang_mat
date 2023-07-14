@@ -20,6 +20,7 @@ import { StudentServiceService } from './student-service.service';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TabsComponent } from './tabs/tabs.component';
+import { EditDialogComponentComponent } from './edit-dialog-component/edit-dialog-component.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { TabsComponent } from './tabs/tabs.component';
     FooterComponent,
     TableComponent,
     FormComponent,
-    TabsComponent
+    TabsComponent,
+    EditDialogComponentComponent
   ],
   imports: [
     BrowserModule,
