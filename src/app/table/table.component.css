@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    
+  }
+  
+  .mat-form-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px; /* adjust as needed */
+  }
+  
+  
+  
+  .th-center{
+    text-align: center;
+  }
+  .th-left{
+    text-align: left;
+  }
+  .th-right{
+    text-align: right;
+  }
+
+  th .email_th{
+    width: 70px;
+  }

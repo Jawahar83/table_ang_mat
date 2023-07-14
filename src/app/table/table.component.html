@@ -1,0 +1,53 @@
+<br>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <mat-form-field>
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="ex: jawahar" #input>
+  </mat-form-field>
+</div>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="rollNo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white"> Roll No</th>
+      <td mat-cell *matCellDef="let row"> {{row.rollNo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white"> Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white"> Email </th>
+      <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white"> Phone No </th>
+      <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white"> Gender </th>
+      <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white">  </th>
+      <td mat-cell *matCellDef="let row"> <button mat-icon-button color="warn" (click)="deleteRow(row)"><mat-icon>delete</mat-icon></button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of students"></mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+.pmd-footer {
+    background-color: #5c4ef4;
+    color: #fff;
+    font-size: 14px;
+    padding: 20px;
+  }
+  
+  .pmd-footer-sub-title {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .pmd-social-icons a {
+    margin-right: 10px;
+  }
+  
+  .pmd-social-icons button {
+    background-color: #fff;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .pmd-social-icons button:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .text-md-right {
+    text-align: right;
+  }
+  
+  @media (max-width: 767px) {
+    .pmd-footer {
+      text-align: center;
+    }
+    .text-md-right {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
