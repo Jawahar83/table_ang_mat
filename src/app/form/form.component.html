@@ -9,7 +9,7 @@
               <div class="label-wrapper">
                 <label for="rollNo"><span class="req"></span> Roll Number:</label>
               </div>
-              <input type="number" class="form-control" formControlName="rollNo" id="rollNo" placeholder="Enter your roll number..." />
+              <input type="text" class="form-control" formControlName="rollNo" id="rollNo" placeholder="Enter your roll number..." />
               <div *ngIf="studentForm.get('rollNo')?.invalid && (studentForm.get('rollNo')?.dirty || studentForm.get('rollNo')?.touched)" class="error-message">
                 <div *ngIf="studentForm.get('rollNo')?.errors?.['required']">*Roll number is required.</div>
                 <div *ngIf="studentForm.get('rollNo')?.errors?.['minlength']">*Roll number must be at least 7 digits.</div>
