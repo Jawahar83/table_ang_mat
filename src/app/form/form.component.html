@@ -1,74 +1,110 @@
+<!-- This is a container that holds the form elements -->
 <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <br>
-        <form *ngIf="studentForm" [formGroup]="studentForm" (ngSubmit)="registernow()" class="form-container">
-  
-          <div class="form-grid">
-            <div class="form-group__item">
-              <div class="label-wrapper">
-                <label for="rollNo"><span class="req"></span> Roll Number:</label>
-              </div>
-              <input type="text" class="form-control" formControlName="rollNo" id="rollNo" placeholder="Enter your roll number..." />
-              <div *ngIf="studentForm.get('rollNo')?.invalid && (studentForm.get('rollNo')?.dirty || studentForm.get('rollNo')?.touched)" class="error-message">
-                <div *ngIf="studentForm.get('rollNo')?.errors?.['required']">*Roll number is required.</div>
-                <div *ngIf="studentForm.get('rollNo')?.errors?.['minlength']">*Roll number must be at least 7 digits.</div>
-              </div>
+  <!-- The form is centered within the row -->
+  <div class="row justify-content-center">
+    <!-- The form takes up 8 columns on medium-sized devices -->
+    <div class="col-md-8">
+      <br>
+      <!-- The form element with Angular form functionality -->
+      <form *ngIf="studentForm" [formGroup]="studentForm" (ngSubmit)="registernow()" class="form-container">
+
+        <!-- Form elements are placed in a grid layout -->
+        <div class="form-grid">
+
+          <!-- Form group for Roll Number input -->
+          <div class="form-group__item">
+            <div class="label-wrapper">
+              <!-- Label for Roll Number input -->
+              <label for="rollNo"><span class="req"></span> Roll Number:</label>
             </div>
-            <div class="form-group__item">
-              <div class="label-wrapper">
-                <label for="name"><span class="req"></span> Name:</label>
-              </div>
-              <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter your name" />
-              <div *ngIf="studentForm.get('name')?.invalid && (studentForm.get('name')?.dirty || studentForm.get('name')?.touched)" class="error-message">
-                *Name is required.
-              </div>
-            </div>
-            <div class="form-group__item">
-              <div class="label-wrapper">
-                <label for="email"><span class="req"></span> Email:</label>
-              </div>
-              <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter your email" />
-              <div *ngIf="studentForm.get('email')?.invalid && (studentForm.get('email')?.dirty || studentForm.get('email')?.touched)" class="error-message">
-                <div *ngIf="studentForm.get('email')?.errors?.['required']">*Email is required.</div>
-                <div *ngIf="studentForm.get('email')?.errors?.['email']">*Invalid email format.</div>
-              </div>
-            </div>
-            <div class="form-group__item">
-              <div class="label-wrapper">
-                <label for="phone"><span class="req"></span> Phone Number:</label>
-              </div>
-              <input type="tel" class="form-control" formControlName="phone" id="phone" placeholder="Enter your phone number" />
-              <div *ngIf="studentForm.get('phone')?.invalid && (studentForm.get('phone')?.dirty || studentForm.get('phone')?.touched)" class="error-message">
-                <div *ngIf="studentForm.get('phone')?.errors?.['required']">*Phone number is required.</div>
-                <div *ngIf="studentForm.get('phone')?.errors?.['minlength']">*Phone number must be 10 digits.</div>
-              </div>
-            </div>
-            <div class="form-group__item ">
-              <div class="main-div">
-                <div class="label-wrapper">
-                  <label><span class="req"></span> Gender:</label>
-                </div>
-                <div class="form-check-inline">
-                  <input class="form-check-input" type="radio" id="gender-male" formControlName="gender" value="Male">
-                  <label class="form-check-label" for="gender-male">Male</label>
-                </div>
-                <div class="form-check-inline">
-                  <input class="form-check-input" type="radio" id="gender-female" formControlName="gender" value="Female">
-                  <label class="form-check-label" for="gender-female">Female</label>
-                </div>
-                <div class="form-check-inline">
-                  <input class="form-check-input" type="radio" id="gender-other" formControlName="gender" value="Other">
-                  <label class="form-check-label" for="gender-other">Other</label>
-                </div>
-              </div>
-              
-            </div>
-            <div class="main-div-sub">
-              <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+            <!-- Roll Number input field -->
+            <input type="text" class="form-control" formControlName="rollNo" id="rollNo" placeholder="Enter your roll number..." />
+
+            <!-- Error messages for Roll Number input -->
+            <div *ngIf="studentForm.get('rollNo')?.invalid && (studentForm.get('rollNo')?.dirty || studentForm.get('rollNo')?.touched)" class="error-message">
+              <div *ngIf="studentForm.get('rollNo')?.errors?.['required']">*Roll number is required.</div>
+              <div *ngIf="studentForm.get('rollNo')?.errors?.['minlength']">*Roll number must be at least 7 digits.</div>
             </div>
           </div>
-        </form>
-      </div>
-    </div>
-  </div>
+
+          <!-- Form group for Name input -->
+          <div class="form-group__item">
+            <div class="label-wrapper">
+              <!-- Label for Name input -->
+              <label for="name"><span class="req"></span> Name:</label>
+            </div>
+            <!-- Name input field -->
+            <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter your name" />
+
+            <!-- Error message for Name input -->
+            <div *ngIf="studentForm.get('name')?.invalid && (studentForm.get('name')?.dirty || studentForm.get('name')?.touched)" class="error-message">
+              *Name is required.
+            </div>
+          </div>
+
+          <!-- Form group for Email input -->
+          <div class="form-group__item">
+            <div class="label-wrapper">
+              <!-- Label for Email input -->
+              <label for="email"><span class="req"></span> Email:</label>
+            </div>
+            <!-- Email input field -->
+            <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter your email" />
+
+            <!-- Error messages for Email input -->
+            <div *ngIf="studentForm.get('email')?.invalid && (studentForm.get('email')?.dirty || studentForm.get('email')?.touched)" class="error-message">
+              <div *ngIf="studentForm.get('email')?.errors?.['required']">*Email is required.</div>
+              <div *ngIf="studentForm.get('email')?.errors?.['email']">*Invalid email format.</div>
+            </div>
+          </div>
+
+          <!-- Form group for Phone Number input -->
+          <div class="form-group__item">
+            <div class="label-wrapper">
+              <!-- Label for Phone Number input -->
+              <label for="phone"><span class="req"></span> Phone Number:</label>
+            </div>
+            <!-- Phone Number input field -->
+            <input type="tel" class="form-control" formControlName="phone" id="phone" placeholder="Enter your phone number" />
+
+            <!-- Error messages for Phone Number input -->
+            <div *ngIf="studentForm.get('phone')?.invalid && (studentForm.get('phone')?.dirty || studentForm.get('phone')?.touched)" class="error-message">
+              <div *ngIf="studentForm.get('phone')?.errors?.['required']">*Phone number is required.</div>
+              <div *ngIf="studentForm.get('phone')?.errors?.['minlength']">*Phone number must be 10 digits.</div>
+            </div>
+          </div>
+
+          <!-- Form group for Gender selection -->
+          <div class="form-group__item ">
+            <div class="main-div">
+              <div class="label-wrapper">
+                <!-- Label for Gender selection -->
+                <label><span class="req"></span> Gender:</label>
+              </div>
+              <!-- Gender options with radio buttons -->
+              <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="gender-male" formControlName="gender" value="Male">
+                <label class="form-check-label" for="gender-male">Male</label>
+              </div>
+              <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="gender-female" formControlName="gender" value="Female">
+                <label class="form-check-label" for="gender-female">Female</label>
+              </div>
+              <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="gender-other" formControlName="gender" value="Other">
+                <label class="form-check-label" for="gender-other">Other</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit button -->
+          <div class="main-div-sub">
+            <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+          </div>
+
+        </div> <!-- End of form-grid -->
+
+      </form> <!-- End of form element -->
+    </div> <!-- End of col-md-8 -->
+  </div> <!-- End of row -->
+</div> <!-- End of container -->

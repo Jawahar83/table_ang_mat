@@ -1,53 +1,83 @@
+<!-- Line break -->
 <br>
+
+<!-- Search form -->
 <div style="display: flex; justify-content: center; align-items: center;">
   <mat-form-field>
     <mat-label>Search</mat-label>
+    <!-- Input field with keyup event to trigger the applyFilter() function -->
     <input matInput (keyup)="applyFilter($event)" placeholder="ex: jawahar" #input>
   </mat-form-field>
 </div>
 
+<!-- Table with material elevation and sorting -->
 <div class="mat-elevation-z8">
+  <!-- Table with material sorting enabled and using dataSource as the data source -->
   <table mat-table [dataSource]="dataSource" matSort>
 
+    <!-- Definition for the 'rollNo' column -->
     <ng-container matColumnDef="rollNo">
+      <!-- Table header cell with sorting enabled and sticky style -->
       <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white"> Roll No</th>
+      <!-- Table cell with the data for the 'rollNo' column -->
       <td mat-cell *matCellDef="let row"> {{row.rollNo}} </td>
     </ng-container>
 
+    <!-- Definition for the 'name' column -->
     <ng-container matColumnDef="name">
+      <!-- Table header cell with sorting enabled and sticky style -->
       <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white"> Name </th>
+      <!-- Table cell with the data for the 'name' column -->
       <td mat-cell *matCellDef="let row"> {{row.name}} </td>
     </ng-container>
 
+    <!-- Definition for the 'email' column -->
     <ng-container matColumnDef="email">
+      <!-- Table header cell with sorting enabled and sticky style -->
       <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white"> Email </th>
+      <!-- Table cell with the data for the 'email' column -->
       <td mat-cell *matCellDef="let row"> {{row.email}} </td>
     </ng-container>
 
+    <!-- Definition for the 'phone' column -->
     <ng-container matColumnDef="phone">
+      <!-- Table header cell with sorting enabled and sticky style -->
       <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white"> Phone No </th>
+      <!-- Table cell with the data for the 'phone' column -->
       <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
     </ng-container>
 
+    <!-- Definition for the 'gender' column -->
     <ng-container matColumnDef="gender">
+      <!-- Table header cell with sorting enabled and sticky style -->
       <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white"> Gender </th>
+      <!-- Table cell with the data for the 'gender' column -->
       <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
     </ng-container>
 
+    <!-- Definition for the 'delete' column -->
     <ng-container matColumnDef="delete">
+      <!-- Table header cell with sorting enabled and sticky style -->
       <th mat-header-cell *matHeaderCellDef mat-sort-header min-width="100px" sticky style="background-color: rgb(124, 234, 124);width: 100px;color:white">  </th>
+      <!-- Table cell with a delete button icon and a click event to call deleteRow() function -->
       <td mat-cell *matCellDef="let row"> <button mat-icon-button color="warn" (click)="deleteRow(row)"><mat-icon>delete</mat-icon></button> </td>
     </ng-container>
 
+    <!-- Table row for the header with defined columns -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <!-- Table row for each data row with defined columns -->
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
+    <!-- Table row for displaying no data when the table is empty or filtered data is not found -->
     <tr class="mat-row" *matNoDataRow>
       <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
     </tr>
   </table>
 
+  <!-- Pagination for the table with material paginator -->
   <div style="display: flex; justify-content: center; align-items: center;">
+    <!-- Material paginator with predefined page size options -->
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of students"></mat-paginator>
   </div>
 </div>
