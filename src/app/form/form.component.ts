@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Student } from '../student';
 import { StudentServiceService } from '../student-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
@@ -49,12 +50,19 @@ export class FormComponent {
 
       // Reset the form after successful submission
       this.studentForm.reset();
+      Swal.fire({
+        title: 'Success!',
+        text: 'Data submitted successfully!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
     } else {
       // If the form is invalid, mark all form controls as touched to display error messages
       Object.values(this.studentForm.controls).forEach(control => {
         control.markAsTouched();
       });
     }
+
   }
 
 }

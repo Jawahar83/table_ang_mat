@@ -100,4 +100,17 @@
     color: #fff;
   }
 
+  /* Custom styles for SweetAlert popup */
+.swal2-popup {
+  font-size: 14px; /* Set the font size */
+}
+
+.swal2-title {
+  font-size: 18px; /* Set the font size of the title */
+}
+
+.swal2-content {
+  font-size: 16px; /* Set the font size of the content text */
+}
+
 
