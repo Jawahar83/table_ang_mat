@@ -27,7 +27,7 @@ export class FormComponent {
       rollNo: ['', [Validators.required, Validators.minLength(7)]],
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.minLength(10)]],
+      phone: ['', [Validators.required, Validators.minLength(10), Validators.pattern(/^[6-9][0-9]{9}$/)]],
       gender: ['', [Validators.required]]
     });
   }
@@ -62,7 +62,6 @@ export class FormComponent {
         control.markAsTouched();
       });
     }
-
   }
 
 }

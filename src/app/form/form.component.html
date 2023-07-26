@@ -71,7 +71,7 @@
             <!-- Error messages for Phone Number input -->
             <div *ngIf="studentForm.get('phone')?.invalid && (studentForm.get('phone')?.dirty || studentForm.get('phone')?.touched)" class="error-message">
               <div *ngIf="studentForm.get('phone')?.errors?.['required']">*Phone number is required.</div>
-              <div *ngIf="studentForm.get('phone')?.errors?.['minlength']">*Phone number must be 10 digits.</div>
+              <div *ngIf="studentForm.get('phone')?.errors?.['pattern']" class="invalid">*Invalid phone number format. Phone number must start with a digit between 6 to 9 and be followed by 9 digits.</div>
             </div>
           </div>
 
